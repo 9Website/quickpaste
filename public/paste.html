@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Paste — QuickPaste</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QUICKPASTE</h1>
+            <p id="paste-meta">Loading paste...</p>
+        </header>
+
+        <main class="glass-panel">
+            <div id="auth-container" style="display: none; text-align: center; padding: 2rem;">
+                <p style="margin-bottom: 1rem;">This paste is password protected.</p>
+                <input type="password" id="unlock-password" placeholder="Enter password..." style="max-width: 250px; margin-right: 0.5rem;">
+                <button onclick="loadPasteContent()">Unlock</button>
+            </div>
+
+            <div id="content-container" style="display: none;">
+                <div id="burn-warning" style="display: none; color: var(--danger); font-size: 0.85rem; margin-bottom: 1rem;">🔥 This paste will be destroyed after viewing.</div>
+                <div id="text-view">
+                    <pre><code id="code-block"></code></pre>
+                </div>
+                <div id="markdown-view" style="display: none; padding: 1rem; background: rgba(3,7,18,0.6); border-radius: 8px;"></div>
+                
+                <div class="controls" style="margin-top: 1rem;">
+                    <div class="control-group">
+                        <button id="copy-btn">Copy</button>
+                        <button id="raw-btn">Raw</button>
+                        <button id="download-btn">Download</button>
+                        <button id="share-btn">Share</button>
+                    </div>
+                    <span id="view-count" style="color: var(--text-muted); font-size: 0.85rem;"></span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="/js/paste.js"></script>
+</body>
+</html>
