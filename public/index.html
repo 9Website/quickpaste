@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickPaste — Share text instantly</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QUICKPASTE</h1>
+            <p>Share text instantly.</p>
+        </header>
+
+        <main class="glass-panel">
+            <form id="paste-form">
+                <textarea id="content" placeholder="Paste your text here..." required></textarea>
+                
+                <div class="controls">
+                    <div class="control-group">
+                        <select id="language">
+                            <option value="plaintext">Plain Text</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="json">JSON</option>
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="c">C</option>
+                            <option value="cpp">C++</option>
+                            <option value="csharp">C#</option>
+                            <option value="php">PHP</option>
+                            <option value="sql">SQL</option>
+                            <option value="bash">Bash</option>
+                            <option value="markdown">Markdown</option>
+                            <option value="typescript">TypeScript</option>
+                        </select>
+
+                        <select id="expiration">
+                            <option value="never">Never Expire</option>
+                            <option value="5m">5 Minutes</option>
+                            <option value="10m">10 Minutes</option>
+                            <option value="1h">1 Hour</option>
+                            <option value="1d">1 Day</option>
+                            <option value="1w">1 Week</option>
+                            <option value="1mo">1 Month</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <input type="text" id="custom-id" placeholder="Custom URL (opt)" style="width: 130px;">
+                        <input type="password" id="password" placeholder="Password (opt)" style="width: 130px;">
+                    </div>
+                </div>
+
+                <div class="controls" style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+                    <div class="control-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="burn"> Burn after view
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="markdown-toggle"> Render Markdown
+                        </label>
+                    </div>
+                    <button type="submit">CREATE PASTE</button>
+                </div>
+            </form>
+            <div id="result" style="margin-top: 1rem; display: none;"></div>
+        </main>
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+</html>
